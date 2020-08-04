@@ -1,0 +1,11 @@
+<nav id="sidebar" xmlns:th="http://www.w3.org/1999/xhtml">
+    <th:block th:include="admin/sidebar-js"></th:block>
+    <div class="sidebar-header">
+        <h3><a th:href="@{/admin}">ADMIN</a></h3>
+    </div>
+
+    <ul class="list-unstyled components">
+        <li><a th:href="@{/admin/category}">category</a></li>
+        <li><a th:href="@{/admin/users}">account</a></li>
+    </ul>
+</nav>
