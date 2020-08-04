@@ -185,8 +185,9 @@
                 </div>
             </div>
         </div>
-        <div class="col-lg-9">
+        <div class="col-lg-9" id="col-lg-9">
             <th:block th:include="common/shopperFirstPage.html"></th:block>
+            <!--<th:block th:include="common/shopperFirstPage.html"></th:block>-->
         </div>
     </div>
 </div>
@@ -194,11 +195,13 @@
 <script type="text/javascript">
 $('#myPage').on('click', function () {
     $('.col-lg-9').empty();
-    $('.col-lg-9').append('append 성공');
+ //   $('.col-lg-9').append('append 성공');
+//    document.getElementById('col-lg-9').append('<th:block th:include="common/Mypage.html"></th:block>');
+    document.getElementById('col-lg-9').innerHTML='<th:block th:include="common/Mypage.html"></th:block>';
+//       $('.col-lg-9').append('<th:block th:include="common/Mypage.html"></th:block>');
+//   $('.col-lg-9').innerHTML='<th:block th:include="common/Mypage.html"></th:block>';
 
-//    document.getElementById("col-lg-9").innerHTML='<th:block th:include="common/Mypage.html">';
-
-//    $('.col-lg-9').innerHTML='<th:block th:include="common/Mypage.html"></th:block>'
+//    $('.col-lg-9').innerHTML=<'<th:block th:include="common/Mypage.html"></th:block>'
 //    $('.col-lg-9').append('<th:block th:include="common/Mypage.html"></th:block>');
 //    $('.col-lg-9').appendChild('<th:block th:include="common/Mypage.html"></th:block>')
 //    $('.col-lg-9').html('<th:block th:include="common/Mypage.html"></th:block>');
