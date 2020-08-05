@@ -9,10 +9,38 @@ import org.springframework.web.bind.annotation.GetMapping;
 public class shopperController {
 
     @GetMapping("/shopperMain")
-    public String index() {
+    public String shopperMain() {
 
         return "/shopper/shopperMain";
     }
+/*
+    @GetMapping("/shopperChangePwd")
+    public String shopperChangePwd() {
+
+        return "/shopper/shopperChangePwd";
+    }
+    @GetMapping("/shopperChatting")
+    public String shopperChatting() {
+
+        return "/shopper/shopperChatting";
+    }
+    @GetMapping("/shopperMypage")
+    public String shopperMypage() {
+
+        return "/shopper/shopperMypage";
+    }
+    @GetMapping("/shopperWithdrawal")
+    public String shopperWithdrawal() {
+
+        return "/shopper/shopperWithdrawal";
+    }
+
+    @GetMapping("/adminMain")
+    public String admin() {
+
+        return "/admin/adminMain";
+    }
+*/
 
 
 

@@ -104,7 +104,7 @@
                     <div class="card-header" id="headingOne">
                         <h2 class="mb-0">
                             <a data-toggle="collapse" data-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
-                                <span><i class="fa fa-user"></i> 내 계정 </span>
+                                <span><i class="fa fa-user"></i> Admin Acoount </span>
                                 <i class="fa fa-chevron-down toggle"></i>
                             </a>
                         </h2>
@@ -112,9 +112,9 @@
                     <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordionExample">
                         <div class="card-body">
                             <ul class="list-group">
-                                <li class="list-group-item" id="myPageBtn"><a href="#" ><i class="fa fa-pencil"></i> 마이 페이지 </a></li>
-                                <li class="list-group-item" id="changePwdBtn"><a href="#" ><i class="fa fa-key"></i> 비밀번호 바꾸기 </a></li>
-                                <li class="list-group-item" id="withdrawalBtn"><a href="#" class="text-danger"><i class="fa fa-trash"></i> 회원 탈퇴 </a></li>
+                                <li class="list-group-item" id="productRegisterBtn"><a href="#" ><i class="fa fa-pencil"></i> 상품등록 </a></li>
+                                <li class="list-group-item" id="productListBtn"><a href="#" ><i class="fa fa-key"></i> 상품 리스트 </a></li>
+                                <li class="list-group-item" id="withdrawalBtn"><a href="#" class="text-danger"><i class="fa fa-trash"></i> 회원관리 및 탈퇴 </a></li>
                             </ul>
                         </div>
                     </div>
@@ -186,27 +186,29 @@
             </div>
         </div>
        <div class="col-lg-9" id="col-lg-9" >
-           <div class="shopperContent" id="firstPageDiv" style="display: block">
-           <th:block th:include="shopperContent/shopperFirstPage.html" ></th:block>
-           </div>
-           <div class="shopperContent" id="mypageDiv">
-               <th:block th:include="shopperContent/Mypage.html" ></th:block>
-           </div>
-           <div class="shopperContent" id="changePwdDiv">
-               <th:block th:include="shopperContent/changePwd.html" ></th:block>
-           </div>
-           <div class="shopperContent" id="withdrawalDiv" >
-               <th:block th:include="shopperContent/withdrawal.html" ></th:block>
-           </div>
-           <div class="shopperContent" id="cahttingDiv" >
-               <th:block th:include="shopperContent/cahtting.html" ></th:block>
-           </div>
+           <div class="adminContent" id="adminFirstPageDiv" style="display: block">
+               <!DOCTYPE html>
+               <html lang="en" xmlns:th="http://www.w3.org/1999/xhtml"
+                     xmlns:sec="http://www.w3.org/1999/xhtml">
+               <head>
+                   <meta charset="UTF-8">
+                   <title>내정보</title>
+               </head>
+               <body>
+               <h1>My Page.</h1>
+<!--               <form th:action="@{'/member/edit/' + ${person.email}}" method="post">
+                   <input type="hidden" name="_method" value="put"/>
 
-           <div class="shopperContent" id="receivedMessageDiv" >
-               <th:block th:include="shopperContent/receivedMessage.html" ></th:block>
-           </div>
-           <div class="shopperContent" id="trashMessageDiv" >
-               <th:block th:include="shopperContent/trashMessage.html" ></th:block>
+                   <input type="text" name="id" th:value="${memberDto.email}" readonly> <br>
+                   이메일 : <span sec:authentication="name"></span><br>
+                   회원번호 :  <input type="text" name="id" th:value="${memberDto.id}" readonly> <br>
+                   이름 : <input type="text" name="memberName" th:value="${memberDto.memberName}"> <br>
+                   우편주소 : <input type="text" name="zipcode" th:value="${memberDto.zipcode}"> <br>
+                   비밀번호 : <input type="password" name="password" > <br>
+                   <input type="submit" value="수정">
+               </form>-->
+               </body>
+               </html>
            </div>
 
        </div>
@@ -215,71 +217,6 @@
 </div>
 
 <script type="text/javascript">
-    $(document).ready(function(){
-        $('.shopperContent').hide();
-        $('#firstPageDiv').show();
-    });
-
-    $('#myPageBtn').on('click', function () {
-        $('.shopperContent').hide();shopperInfo
-        $('#mypageDiv').show();
-        $.ajax({
-            type: 'POST',
-            url: '/api/v1/posts',
-            dataType: 'json',
-            contentType:'application/json; charset=utf-8',
-            data: JSON.stringify(data)
-        }).done(function() {
-            alert('글이 등록되었습니다.');
-            window.location.href = '/';
-        }).fail(function (error) {
-            alert(JSON.stringify(error));
-        });
-    });
-
-    $('#changePwdBtn').on('click', function () {
-        $('.shopperContent').hide();
-        $('#changePwdDiv').show();
-    });
-
-    $('#withdrawalBtn').on('click', function () {
-        $('.shopperContent').hide();
-        $('#withdrawalDiv').show();
-    });
-
-    $('#cahttingBtn').on('click', function () {
-        $('.shopperContent').hide();
-        $('#cahttingDiv').show();
-    });
-    $('#receivedMessageBtn').on('click', function () {
-        $('.shopperContent').hide();
-        $('#receivedMessageDiv').show();
-    });
-    $('#trashMessageBtn').on('click', function () {
-        $('.shopperContent').hide();
-        $('#trashMessageDiv').show();
-    });
-
-    $('#chPwdBtn').on('click', function () {
-        alert('비밀번호 변경?');
-        location.href='http://localhost:shopperMain/';
-    });
-    chPwdBtn
-//    $('.col-lg-9').append('append 성공');
-//    document.getElementById('col-lg-9').append('<th:block th:include="/common/Mypage.html"></th:block>');
-//    document.getElementById('col-lg-9').innerHTML='<th:block th:include="common/test.html"></th:block>';
-//    var mypage = "<th:block th:include='common/Mypage.html'></th:block>";
-//          $('#col-lg-9').append(mypage);
-
-    //       $('.col-lg-9').append('<th:block th:include="common/Mypage.html"></th:block>');
-//   $('.col-lg-9').innerHTML='<th:block th:include="common/Mypage.html"></th:block>';
-
-//    $('.col-lg-9').innerHTML=<'<th:block th:include="common/Mypage.html"></th:block>'
-//    $('.col-lg-9').append('<th:block th:include="common/Mypage.html"></th:block>');
-//    $('.col-lg-9').appendChild('<th:block th:include="common/Mypage.html"></th:block>')
-//    $('.col-lg-9').html('<th:block th:include="common/Mypage.html"></th:block>');
-
-
 
 
 

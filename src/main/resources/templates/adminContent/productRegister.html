@@ -1,0 +1,47 @@
+<div class="jumbotron" xmlns:th="http://www.w3.org/1999/xhtml">
+    <h1 class="display-4">상품등록</h1>
+    <p class="lead">
+
+    <form id="writeForm" enctype="multipart/form-data" method="post">
+
+        스토어 :
+        <select class="form-control selectric" id="store" name="store">
+            <option></option>
+            <option>emart</option>
+            <option>lottemart</option>
+            <option>homeplus</option>
+            <option>costco</option>
+        </select>
+        카테고리 :
+        <select class="form-control selectric" id="category" name="category">
+            <option></option>
+            <option>과일</option>
+            <option>채소</option>
+            <option>쌀/잡곡/견과</option>
+            <option>정육/계란류</option>
+            <option>수산물/건해산</option>
+        </select><br>
+
+    <input type="text" class="form-control" name="productId" id="productId" placeholder="제품 코드" required="required">
+    <input type="text" class="form-control" name="productName" id="productName" placeholder="제품명" required="required">
+    <div class="form-group">
+        <div class="row">
+            <div class="col"><input type="text"  class="form-control" name="productPrice" id="productPrice" placeholder="단가" required="required"></div>
+            <div class="col"> <input type="text" class="form-control" name="productQty" id="productQty" placeholder="수량" required="required"></div>
+        </div>
+    </div>
+
+
+    <input type="textarea " class="form-control" name="productContent" id="productContent" placeholder="상세정보" required="required">
+    <br>
+    <input type="file" name="img" id="img"><br><br>
+    <a class="btn btn-primary btn-withdrawal" id="writeBtn" href="#" target="_blank">등록</a>
+
+
+    </form>
+
+    <hr class="my-4">
+
+
+
+</div>

@@ -1,7 +1,6 @@
 package com.sign.in.controller;
 
 import com.sign.in.dto.MemberDto;
-import com.sign.in.dto.MemberPersonalDto;
 import com.sign.in.service.MemberService;
 import lombok.AllArgsConstructor;
 import org.springframework.security.core.Authentication;
@@ -18,16 +17,27 @@ public class MemberController {
     private MemberService memberService;
 
     // 메인 페이지
+    @GetMapping("/adminMain2")
+    public String adminMain2() {
+
+        return "/admin/adminMain2";
+    }
+    @GetMapping("/adminMain2/myPage")
+    public String adminMain2mp() {
+
+        return "/admin/adminMainMypage";
+    }
+    // 메인 페이지
     @GetMapping("/")
     public String index() {
 
-        return "/index";
+        return "/register/index";
     }
 
     // 회원가입 페이지
     @GetMapping("/user/signup")
     public String dispSignup() {
-        return "/register";
+        return "/register/register";
     }
 
     // 회원가입 처리
@@ -40,26 +50,26 @@ public class MemberController {
     // 로그인 페이지
     @GetMapping("/user/login")
     public String dispLogin() {
-        return "/login";
+        return "/register/login";
     }
 
     // 로그인 결과 페이지
     @GetMapping("/user/login/result")
     public String dispLoginResult() {
 
-        return "/loginSuccess";
+        return "/register/loginSuccess";
     }
 
     // 로그아웃 결과 페이지
     @GetMapping("/user/logout/result")
     public String dispLogout() {
-        return "/logout";
+        return "/register/logout";
     }
 
     // 접근 거부 페이지
     @GetMapping("/user/denied")
     public String dispDenied() {
-        return "/denied";
+        return "/register/denied";
     }
 
 /*    // 내 정보 페이지
@@ -84,7 +94,22 @@ public class MemberController {
         model.addAttribute("person",memberDto);
 
 
-        return "/myinfo";
+        return "/register/myinfo";
+    }
+
+    @GetMapping("/member/info")
+    public String disMypage(HttpSession session, Model model) {
+        Authentication user = SecurityContextHolder.getContext().getAuthentication();
+        String email = user.getName();
+        System.out.println(email);
+
+        MemberDto memberDto= memberService.findByEmail(email);
+        System.out.println(memberDto.getEmail());
+
+        model.addAttribute("memberDto",memberDto);
+
+
+        return "/shopperContent/Mypage";
     }
 
     //게시글 수정
@@ -98,6 +123,6 @@ public class MemberController {
     // 어드민 페이지
     @GetMapping("/admin")
     public String dispAdmin() {
-        return "/admin";
+        return "/register/admin";
     }
 }
