@@ -8,40 +8,30 @@ import org.springframework.web.bind.annotation.GetMapping;
 @AllArgsConstructor
 public class shopperController {
 
-    @GetMapping("/shopperMain")
+    @GetMapping("/shopperWeb")
+    public String shopperWeb() {
+        return "/shopperWebBody/firstPage.html";
+    }
+
+
+    @GetMapping("/chatting")
     public String shopperMain() {
-
-        return "/shopper/shopperMain";
+        return "/shopperWebBody/chatting";
     }
-/*
-    @GetMapping("/shopperChangePwd")
-    public String shopperChangePwd() {
-
-        return "/shopper/shopperChangePwd";
-    }
-    @GetMapping("/shopperChatting")
-    public String shopperChatting() {
-
-        return "/shopper/shopperChatting";
-    }
-    @GetMapping("/shopperMypage")
-    public String shopperMypage() {
-
-        return "/shopper/shopperMypage";
-    }
-    @GetMapping("/shopperWithdrawal")
-    public String shopperWithdrawal() {
-
-        return "/shopper/shopperWithdrawal";
+    @GetMapping("/changePwd")
+    public String changePwd() {
+        return "/shopperWebBody/changePwd";
     }
 
-    @GetMapping("/adminMain")
-    public String admin() {
-
-        return "/admin/adminMain";
+    @GetMapping("/withdrawal")
+    public String withdrawal() {
+        return "/shopperWebBody/withdrawal";
     }
-*/
 
+    @GetMapping("/myPage")
+    public String layout() {
+        return "/shopperWebBody/myPage";
+    }
 
 
 }

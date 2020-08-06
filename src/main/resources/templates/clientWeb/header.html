@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <header class="header"th:fragment="headerFragment" >
+        <head>
+        <meta charset="UTF-8">
+        <meta name="description" content="Ogani Template">
+        <meta name="keywords" content="Ogani, unica, creative, html">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+            <style>
+                body {
+                    color: #999;
+                    background: #f3f3f3;
+                    font-family: 'Roboto', sans-serif;
+                }
+                .form-control {
+                    border-color: #eee;
+                    min-height: 41px;
+                    box-shadow: none !important;
+                }
+                .form-control:focus {
+                    border-color: #5cd3b4;
+                }
+                .form-control, .btn {
+                    border-radius: 3px;
+                }
+                .signup-form {
+                    width: 500px;
+                    margin: 0 auto;
+                    padding: 30px 0;
+                }
+                .signup-form h2 {
+                    color: #333;
+                    margin: 0 0 30px 0;
+                    display: inline-block;
+                    padding: 0 30px 10px 0;
+                    border-bottom: 3px solid #5cd3b4;
+                }
+                .signup-form form {
+                    color: #999;
+                    border-radius: 3px;
+                    margin-bottom: 15px;
+                    background: #fff;
+                    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+                    padding: 30px;
+                }
+                .signup-form .form-group row {
+                    margin-bottom: 20px;
+                }
+                .signup-form label {
+                    font-weight: normal;
+                    font-size: 14px;
+                    line-height: 2;
+                }
+                .signup-form input[type="checkbox"] {
+                    position: relative;
+                    top: 1px;
+                }
+                .signup-form .btn {
+                    font-size: 16px;
+                    font-weight: bold;
+                    background: #5cd3b4;
+                    border: none;
+                    margin-top: 20px;
+                    min-width: 140px;
+                }
+                .signup-form .btn:hover, .signup-form .btn:focus {
+                    background: #41cba9;
+                    outline: none !important;
+                }
+                .signup-form a {
+                    color: #5cd3b4;
+                    text-decoration: underline;
+                }
+                .signup-form a:hover {
+                    text-decoration: none;
+                }
+                .signup-form form a {
+                    color: #5cd3b4;
+                    text-decoration: none;
+                }
+                .signup-form form a:hover {
+                    text-decoration: underline;
+                }
+            </style>
+
+        <!-- Google Font -->
+        <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@200;300;400;600;900&display=swap" rel="stylesheet">
+
+        <!-- Css Styles -->
+        <link rel="stylesheet" href="/css/bootstrap.min.css" type="text/css">
+        <link rel="stylesheet" href="/css/font-awesome.min.css" type="text/css">
+        <link rel="stylesheet" href="/css/elegant-icons.css" type="text/css">
+        <link rel="stylesheet" href="/css/nice-select.css" type="text/css">
+        <link rel="stylesheet" href="/css/jquery-ui.min.css" type="text/css">
+        <link rel="stylesheet" href="/css/owl.carousel.min.css" type="text/css">
+        <link rel="stylesheet" href="/css/slicknav.min.css" type="text/css">
+        <link rel="stylesheet" href="/css/style.css" type="text/css">
+    </head>
+
+    <meta charset="UTF-8">
+    <title>WM?</title>
+    <!-- Header Section Begin -->
+
+        <div class="header__top">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-6 col-md-6">
+                        <div class="header__top__left">
+                            <ul>
+                                <li><i class="fa fa-envelope"></i> hello@colorlib.com</li>
+                                <li>Free Shipping for all Order of $99</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-md-6">
+                        <div class="header__top__right">
+                            <div class="header__top__right__social">
+                                <a href="#"><i class="fa fa-facebook"></i></a>
+                                <a href="#"><i class="fa fa-twitter"></i></a>
+                                <a href="#"><i class="fa fa-linkedin"></i></a>
+                                <a href="#"><i class="fa fa-pinterest-p"></i></a>
+                            </div>
+
+                            <div class="header__top__right__auth">
+                                <a href="/clientMypage"><i class="fa fa-user"></i> My page</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3">
+                    <div class="header__logo">
+                        <a href="./clientMain"><img src="/img/WM.png" width="30%" height="auto" alt=""></a>
+                    </div>
+                </div>
+
+                <div class="col-lg-6">
+                    <nav class="header__menu">
+                        <ul>
+                            <li class="active"><a href="./clientMain">Home</a></li>
+                            <li><a href="./shop-grid">Shop</a></li>
+                            <li><a href="#">Pages</a>
+                                <ul class="header__menu__dropdown">
+                                    <li><a href="./shop-details">Shop Details</a></li>
+                                    <li><a href="./shoping-cart">Shoping Cart</a></li>
+                                    <li><a href="./checkout">Check Out</a></li>
+                                    <li><a href="./blog-details">Blog Details</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="./blog">Blog</a></li>
+                            <li><a href="./contact">Contact</a></li>
+                        </ul>
+                    </nav>
+                </div>
+                <div class="col-lg-3">
+                    <div class="header__cart">
+                        <ul>
+                            <li><a href="#"><i class="fa fa-heart"></i> <span>1</span></a></li>
+                            <li><a href="#"><i class="fa fa-shopping-bag"></i> <span>3</span></a></li>
+                        </ul>
+                        <div class="header__cart__price">item: <span>$150.00</span></div>
+                    </div>
+                </div>
+            </div>
+            <div class="humberger__open">
+                <i class="fa fa-bars"></i>
+            </div>
+        </div>
+    </header>
+    <!-- Header Section End -->
+</head>
+
+</body>
+</html>
