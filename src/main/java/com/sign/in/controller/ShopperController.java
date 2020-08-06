@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 
 @Controller
 @AllArgsConstructor
-public class shopperController {
+public class ShopperController {
 
     @GetMapping("/shopperWeb")
     public String shopperWeb() {
